@@ -6,9 +6,9 @@
 //https://www.alltrails.com/explore?b_tl_lat=37.77722770873696&b_tl_lng=-122.89718627929688&b_br_lat=36.82907321372808&b_br_lng=-120.72326660156249&route[]=L
 
 enum Difficulty {
-  DifficultyEasy,
-  DifficultyModerate,
-  DifficultyHard
+  DifficultyEasy     = 1,
+  DifficultyModerate = 2,
+  DifficultyHard     = 3
 };
 
 enum Activity {
@@ -68,22 +68,35 @@ inline Suitability operator|(Suitability a, Suitability b) {
 }
 
 enum RouteType {
-  RouteTypeOutAndBack   = 1 << 0,
-  RouteTypeLoop         = 1 << 1,
-  RouteTypePointToPoint = 1 << 2
+  RouteTypeOutAndBack   = 1,
+  RouteTypeLoop         = 2,
+  RouteTypePointToPoint = 3
 };
 
 enum TrailTraffic {
-  TrailTrafficLight    = 1 << 0,
-  TrailTrafficModerate = 1 << 1,
-  TrailTrafficHeavy    = 1 << 2
+  TrailTrafficLight    = 1,
+  TrailTrafficModerate = 2,
+  TrailTrafficHeavy    = 3
+};
+
+struct GeographicLocation {
+  double Latitude;
+  double Longitude;
 };
 
 class Trail {
 private:
+  //Should we allocate these dynamically?
   char m_szName[256];
+  char m_szAreaName[256];
+  char m_szCountryName[256];
+  char m_szCityName[256];
+  char m_szStateName[256];
+
+  int m_reviewCount;
   Difficulty m_difficulty;
-  int m_lengthMiles;
+  GeographicLocation m_location;
+  double m_lengthMiles;
   int m_rating;
   Activity m_fActivities;
   View m_fViews;
