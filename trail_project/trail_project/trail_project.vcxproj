@@ -121,6 +121,7 @@
     <ClInclude Include="hashmap.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="node.h" />
+    <ClInclude Include="trail.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
