@@ -118,8 +118,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarysearchtree.h" />
     <ClInclude Include="hashmap.h" />
     <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="node.h" />
     <ClInclude Include="trail.h" />
   </ItemGroup>

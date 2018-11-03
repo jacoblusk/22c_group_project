@@ -10,12 +10,13 @@ Classes:   IHashMap<T, U>
 template <typename T, typename U>
 class IHashMap {
 public:
-  U Get(T key) = 0;
-  void Set(T key, U data) = 0;
-  void Delete(T key) = 0;
-  void Empty() = 0;
-  bool IsEmpty() = 0;
-  bool Contains(T key) = 0;
+  virtual U Get(T key) = 0;
+  virtual void Set(T key, U data) = 0;
+  virtual void Delete(T key) = 0;
+  virtual void Empty() = 0;
+  virtual bool IsEmpty() = 0;
+  virtual bool Contains(T key) = 0;
+  virtual void Print() = 0;
 };
 
 #endif
