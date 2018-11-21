@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
   
   while (pMenu->IsMenuRunning()) {
     pMenu->Print();
-    MenuOption option = pMenu->ReadMenuOption();
+    MenuOption::Type option = pMenu->ReadMenuOption();
     pMenu->ProcessMenuOption(option);
   }
 

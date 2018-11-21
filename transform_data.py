@@ -1,6 +1,9 @@
 from typing import *
 from enum import Enum, IntFlag, unique
+import struct
 import json
+import os
+import errno
 
 @unique
 class Activity(IntFlag):
@@ -274,6 +277,13 @@ class Trail(object):
                                                        json['_geoloc']['lng'])
         return trail
 
+def make_sure_path_exists(path):
+    try:
+        os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
+
 if __name__ == "__main__":
 
     with open('trail_data.json', 'r') as trail_data_file:
@@ -285,8 +295,12 @@ if __name__ == "__main__":
                 trails.append(trail)
             except Exception as e:
                 print(e)
-        
+
+        make_sure_path_exists("trail_data")
+
         for trail in trails:
-            if trail.activities & Activity.PaddleSports:
-                print(trail.name)
+            #need to make sure trail.name is sanatized
+            make_sure_path_exists("trail_data/%s" % trail.name)
+            with open("trail_data/%s/data" % trail.name, 'w') as output:
+                
 
