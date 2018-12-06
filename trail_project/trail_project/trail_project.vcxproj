@@ -118,11 +118,14 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binarysearchtree.h" />
-    <ClInclude Include="hashmap.h" />
-    <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="binary_search_tree.h" />
+    <ClInclude Include="bst_node.h" />
+    <ClInclude Include="csv_reader.h" />
+    <ClInclude Include="hash_map.h" />
+    <ClInclude Include="linked_list.h" />
+    <ClInclude Include="linked_node.h" />
     <ClInclude Include="menu.h" />
-    <ClInclude Include="node.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="trail.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
